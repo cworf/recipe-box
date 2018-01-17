@@ -17,24 +17,18 @@ import { Component } from '@angular/core';
       <ul>
         <li *ngFor="let step of currentRecipe.steps">{{step}}</li>
       </ul>
+      <input [(ngModel)]="currentRecipe.title" type="text">
+      <label for="check">mark as vegan</label>
+      <input id="check" [(ngModel)]="currentRecipe.isVegan" type="checkbox">
     </div>
-<!--    <h2>Create a new deally</h2>
-    <form>
-      <input type="text" id="title" placeholder="enter title of recipe">
-      <div class="form-group" id="ingredients">
-        <div class="row">
-          <input type="text" name="ingredients" placeholder="enter ingredient"><button type="button" name="button" (click)="addField('ingredients')">+</button>
-        </div>
-      </div>
-      <div class="form-group" id="steps">
-        <div class="row">
-          <input type="text" name="steps" placeholder="enter instruction step"><button type="button" name="button" (click)="addField('steps')">+</button>
-        </div>
-      </div>
-    </form>
-  </div>-->
+    <h2>{{name}}</h2>
+
+
+
+  </div>
   `
 })
+
 
 export class AppComponent {
   currentRecipe: string =  'Recipes';
@@ -54,12 +48,6 @@ export class AppComponent {
       return "bg-warning";
     }
   }
-
-  // addField(fieldType){
-  //   $(`#${fieldType}`).append(`<div class="row">
-  //     <input type="text" name="${fieldType}" placeholder="enter additional"><button type="button" name="button" (click)="addField('${fieldType}')">+</button>
-  //   </div>`);
-  // }
 
 }
 
